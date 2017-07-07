@@ -20,7 +20,6 @@ function respond() {
 
 function postMessage() {
   var botResponse, options, body, botReq;
-  var request = JSON.parse(this.req.chunks[0]);
   
   botResponse = cool() + ' @';
 
