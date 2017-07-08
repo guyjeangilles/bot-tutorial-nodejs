@@ -33,11 +33,12 @@ function respond() {
 
 function postMessage() {
   var botResponse, options, body, botReq;
-  var guys = ['Aaron McClendon','Adam Rukin'];
-  var guyIndex = Math.floor(Math.random()*guys.length);
-  var match = guys[guyIndex];
+  var neutral = ['Aaron McClendon', 'Abbie Spector', 'Abigail Schneider', 'Adam Rukin', 'Aleck Pinto', 'Alex Gaggino', 'Alexandra Bacchus', 'Amanda Halacy', 'Arjun Nukal', 'B O\'B', 'Beans', 'Becca Groner', 'Brandon Davenport', 'Briana Natalie', 'Bridget Lanigan', 'Brooke Sterneck', 'Catherine Levins', 'Corinne Sullivan', 'Courtney Morgan', 'Danya B', 'David Yocum', 'Dawn musil', 'Dayo Akinjisola', 'Drew Carlson', 'Eli Panken', 'Ella Simmons', 'Evan Matuszak', 'Gene Williams', 'Grettie Mason', 'Guyrandy Jean-Gilles', 'Ibanca Anand', 'Jaafar Mothafer', 'James Dolgin', 'James Levine', 'Jeannie blackwood', 'Jeff Biestek', 'Joe Sullivan', 'Jon Weiss', 'Jordan Symone', 'Josh Harrison', 'Joshua Su', 'Julia Wang', 'Justin Ramos', 'Katie Connors', 'Kelly Ready', 'Kelsey Murphy', 'Kimmi Schonhorst', 'Liv Sisson', 'Liv Stromme', 'Liz Treacy', 'Lydia Ottaviano', 'Mady Jankowski', 'Mallory Michaelis', 'Martha Cosgrove', 'Matt Bee', 'Matt Crescimanno', 'Micah Jaffe', 'Micah Leinbach', 'Michelle Khalid', 'Miguel Ramirez', 'Mihir Pershad', 'Nick Zajciw', 'Noah Zweben', 'Paola Peraza', 'Perrin Brown', 'Petey DeJoy', 'Rachel Smedley', 'Rahul Narain', 'Ryan Cleary', 'Sally Lindsay', 'Sam Einhorna', 'Sam Koening', 'Sam Summer', 'Sarena Martinez', 'Saseen Najjar', 'Sean McCroskey', 'Spencer Keith', 'Steven Soto', 'Thomas Krumins', 'Vinay Nagaraj', 'Zac Levin']
+  var neutralIndex = Math.floor(Math.random()*neutral.length);
+  var match = neutral[neutralIndex];
+  
   //botResponse = cool() + ' @Guyrandy Jean-Gilles';
-  botResponse = cool() + ' @' + match;
+  botResponse ='^@' + match;
 
   options = {
     hostname: 'api.groupme.com',
