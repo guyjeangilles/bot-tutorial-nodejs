@@ -14,14 +14,14 @@ function respond() {
     postMessage();
     this.res.end();
   }
-  if (request.text && botRegexGuy.test(request.text)) {
+  if (request.text && botRegexGal.test(request.text)) {
 	this.res.writeHead(200);
     postMessage();
     this.res.end();
   }
   
   if(request.text && botRegexNeutral.test(request.text)) {
-	  his.res.writeHead(200);
+	this.res.writeHead(200);
     postMessage();
     this.res.end();
   } else {
