@@ -1,4 +1,5 @@
 var http, director, cool, bot, router, server, port;
+var botID = process.env.BOT_ID;
 
 http        = require('http');
 director    = require('director');
@@ -7,8 +8,8 @@ bot         = require('./bot.js');
 
 router = new director.http.Router({
   '/' : {
-    post: bot.respond,
-    get: ping
+	get: ping,
+	post: bot.respond,
   }
 });
 
@@ -29,5 +30,5 @@ server.listen(port);
 
 function ping() {
   this.res.writeHead(200);
-  this.res.end("Hey, I'm Cool Guy.");
+  this.res.end("/guy");
 }
