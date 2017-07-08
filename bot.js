@@ -33,8 +33,11 @@ function respond() {
 
 function postMessage() {
   var botResponse, options, body, botReq;
-  
-  botResponse = cool() + ' @Guyrandy Jean-Gilles';
+  var guys = ['Aaron McClendon','Adam Rukin'];
+  var guyIndex = Math.floor(Math.random()*guys.length);
+  var match = guys[guyIndex];
+  //botResponse = cool() + ' @Guyrandy Jean-Gilles';
+  botResponse = cool() + ' @' + match;
 
   options = {
     hostname: 'api.groupme.com',
