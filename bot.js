@@ -30,10 +30,7 @@ function respond() {
     this.res.end();
   }
 }  
-  var botResponse, options, body, botReq;
-  
-  var neutralIndex = Math.floor(Math.random()*neutral.length);
-  var match = neutral[neutralIndex];
+
 function postMessageGuy() {
   var guys = [ 'Aaron McClendon', 'Adam Rukin', 'Aleck Pinto', 'Alex Gaggino', 'Arjun Nukal', 'B O\'B', 'Beans', 'Brandon Davenport', 'David Yocum', 'Dayo Akinjisola', 'Drew Carlson', 'Eli Panken', 'Eric Jasinski', 'Evan Matuszak', 'Franklin Li', 'Gene Wiliams', 'Guyrandy Jean-Gilles', 'Jaafar Mothafer', 'James Dolgin', 'James Levine', 'Jeff Biestek', 'Joe Sullivan', 'Jon Weiss', 'Josh Harrison', 'Joshua Su', 'Justin Ramos',  'Keiran McVeigh', 'Matt Bee', 'Matt Crescinmanno', 'Micah Jaffe', 'Micah Leinbach', 'Mihir Pershad', 'Nick Zajciw', 'Noah Zweben', 'Petey DeJoy', 'Rahul Narain', 'Ryan Cleary', 'Sam Koening', 'Sam Summer', 'Sarim Ahmed', 'Saseen Najjar', 'Sean McCroskey', 'Spencer Keith', 'Steven Soto', 'Thomas Krumins', 'Will Humphrey', 'Vinay Nagaraj', 'Zac Levin'];
   
