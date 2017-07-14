@@ -31,18 +31,22 @@ function respond() {
   }
 }  
 
-var activity = ['coffee', 'brunch', 'lunch', 'dinner', 'drag show', 'RISD Museum', 'froyo', 'roller skating', 'actually watch a movie', 'ice cream', 'cook a meal', 'go on a walk', 'arcade'];
+var activity = ['coffee', 'brunch', 'lunch', 'dinner', 'drag show', 'museum', 'froyo', 'roller skating', 'actually watch a movie', 'ice cream', 'cook a meal', 'go on a walk', 'arcade', 'RISD Nature Lab', 'zoo', 'Muse Paintbar', 'bake something'];
 
 function postMessageGuy() {
   var guys = [ 'Aaron McClendon', 'Adam Rukin', 'Aleck Pinto', 'Alex Gaggino', 'Andreas Betancourt', 'Arjun Nukal', 'B O\'B', 'Beans', 'Brandon Davenport', 'David Yocum', 'Dayo Akinjisola', 'Drew Carlson', 'Eli Panken', 'Eric Jasinski', 'Evan Matuszak', 'Franklin Li', 'Gene Wiliams', 'Guyrandy Jean-Gilles', 'Ismail Oukhouya', 'Jaafar Mothafer', 'James Dolgin', 'James Levine', 'Jeff Biestek', 'Joe Sullivan', 'Jon Weiss', 'Josh Harrison', 'Joshua Su', 'Justin Ramos',  'Keiran McVeigh', 'Kevin Carter', 'Matt Bee', 'Matt Crescinmanno', 'Matthew Maquiling', 'Micah Jaffe', 'Micah Leinbach', 'Mihir Pershad', 'Narin Luangrath', 'Nick Zajciw', 'Noah Zweben', 'Ojas Chinchwadkar', 'Petey DeJoy', 'Quenton Stevenson', 'Rahul Narain', 'Ryan Cleary', 'Sam Koening', 'Sam Summer', 'Sarim Ahmed', 'Saseen Najjar', 'Sean Pitterson Jr', 'Sean McCroskey', 'Spencer Keith', 'Steven Soto', 'Thomas Krumins', 'Will Humphrey', 'Vinay Nagaraj', 'Zac Levin'];
+  var activity = ['coffee', 'brunch', 'lunch', 'dinner', 'drag show', 'museum', 'froyo', 'roller skating', 'actually watch a movie', 'ice cream', 'cook a meal', 'go on a walk', 'arcade', 'RISD Nature Lab', 'zoo', 'Muse Paintbar', 'bake something'];
   
   var botResponse, options, body, botReq;
   
   var index = Math.floor(Math.random()*(guys.length));
   var match = guys[index];
   
+  var index_act = Math.floor(Math.random()*(activity.length));
+  var date = activity[index_act];
+  
   //botResponse = cool() + ' @Guyrandy Jean-Gilles';
-  botResponse ='^@' + match;
+  botResponse ='^ @' + match + ' ' + activity + '?';
 
   options = {
     hostname: 'api.groupme.com',
