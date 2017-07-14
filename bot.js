@@ -8,7 +8,7 @@ function respond() {
       botRegexGuy = /^\/guy$/;
 	  botRegexGal = /^\/gal$/;
 	  botRegexNeutral = /^\/neutral$/;
-	  botRegexActivity = /^\/neutral$/;
+	  botRegexActivity = /^\/activity$/;
 
   if(request.text && botRegexGuy.test(request.text)) {
     this.res.writeHead(200);
