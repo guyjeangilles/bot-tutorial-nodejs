@@ -46,7 +46,7 @@ function postMessageGuy() {
   var date = activity[index_act];
   
   //botResponse = cool() + ' @Guyrandy Jean-Gilles';
-  botResponse ='^ @' + match + ' ' + activity + '?';
+  botResponse ='^ @' + match + ' ' + date + '?';
 
   options = {
     hostname: 'api.groupme.com',
