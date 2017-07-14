@@ -8,20 +8,12 @@ function respond() {
       botRegexGuy = /^\/guy$/;
 	  botRegexGal = /^\/gal$/;
 	  botRegexNeutral = /^\/neutral$/;
-	  botRegexActivity = /^\/activity$/;
-	  
-  if(request.text && botRegexActivity.test(request.text)) {
-    this.res.writeHead(200);
-    postMessageActivity();
-    this.res.end();
-  }  
 
   if(request.text && botRegexGuy.test(request.text)) {
     this.res.writeHead(200);
     postMessageGuy();
     this.res.end();
   }
-  
   if (request.text && botRegexGal.test(request.text)) {
 	this.res.writeHead(200);
     postMessageGal();
@@ -39,46 +31,7 @@ function respond() {
   }
 }  
 
-function postMessageActivity() {
-  var activity = ['coffee', 'brunch', 'lunch', 'dinner', 'drag show', 'museum', 'froyo', 'roller skating', 'actually watch a movie', 'ice cream', 'cook a meal', 'go on a walk', 'arcade', 'RISD Nature Lab', 'zoo', 'Muse Paintbar', 'bake something'];
-  
-  var botResponse, options, body, botReq;
-  
-  var index_act = Math.floor(Math.random()*(activity.length));
-  var date = activity[index_act];
-  
-  //botResponse = cool() + ' @Guyrandy Jean-Gilles';
-  botResponse ='^ ' date + '?';
-
-  options = {
-    hostname: 'api.groupme.com',
-    path: '/v3/bots/post',
-    method: 'POST'
-  };
-
-  body = {
-    "bot_id" : botID,
-    "text" : botResponse
-  };
-
-  console.log('sending ' + botResponse + ' to ' + botID);
-
-  botReq = HTTPS.request(options, function(res) {
-      if(res.statusCode == 202) {
-        //neat
-      } else {
-        console.log('rejecting bad status code ' + res.statusCode);
-      }
-  });
-
-  botReq.on('error', function(err) {
-    console.log('error posting message '  + JSON.stringify(err));
-  });
-  botReq.on('timeout', function(err) {
-    console.log('timeout posting message '  + JSON.stringify(err));
-  });
-  botReq.end(JSON.stringify(body));
-}
+var activity = ['coffee', 'brunch', 'lunch', 'dinner', 'drag show', 'museum', 'froyo', 'roller skating', 'actually watch a movie', 'ice cream', 'cook a meal', 'go on a walk', 'arcade', 'RISD Nature Lab', 'zoo', 'Muse Paintbar', 'bake something'];
 
 function postMessageGuy() {
   var guys = [ 'Aaron McClendon', 'Adam Rukin', 'Aleck Pinto', 'Alex Gaggino', 'Andreas Betancourt', 'Arjun Nukal', 'B O\'B', 'Beans', 'Brandon Davenport', 'David Yocum', 'Dayo Akinjisola', 'Drew Carlson', 'Eli Panken', 'Eric Jasinski', 'Evan Matuszak', 'Franklin Li', 'Gene Wiliams', 'Guyrandy Jean-Gilles', 'Ismail Oukhouya', 'Jaafar Mothafer', 'James Dolgin', 'James Levine', 'Jeff Biestek', 'Joe Sullivan', 'Jon Weiss', 'Josh Harrison', 'Joshua Su', 'Justin Ramos',  'Keiran McVeigh', 'Kevin Carter', 'Matt Bee', 'Matt Crescinmanno', 'Matthew Maquiling', 'Micah Jaffe', 'Micah Leinbach', 'Mihir Pershad', 'Narin Luangrath', 'Nick Zajciw', 'Noah Zweben', 'Ojas Chinchwadkar', 'Petey DeJoy', 'Quenton Stevenson', 'Rahul Narain', 'Ryan Cleary', 'Sam Koening', 'Sam Summer', 'Sarim Ahmed', 'Saseen Najjar', 'Sean Pitterson Jr', 'Sean McCroskey', 'Spencer Keith', 'Steven Soto', 'Thomas Krumins', 'Will Humphrey', 'Vinay Nagaraj', 'Zac Levin'];
