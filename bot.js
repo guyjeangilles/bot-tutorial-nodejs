@@ -8,6 +8,7 @@ function respond() {
       botRegexGuy = /^\/guy$/;
 	  botRegexGal = /^\/gal$/;
 	  botRegexNeutral = /^\/neutral$/;
+	  botRegexActivity = /^\/neutral$/;
 
   if(request.text && botRegexGuy.test(request.text)) {
     this.res.writeHead(200);
@@ -21,6 +22,12 @@ function respond() {
   }
   
   if(request.text && botRegexNeutral.test(request.text)) {
+	this.res.writeHead(200);
+    postMessageNeutral();
+    this.res.end();
+  } 
+  
+  if(request.text && botRegexActivity.test(request.text)) {
 	this.res.writeHead(200);
     postMessageNeutral();
     this.res.end();
